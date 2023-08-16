@@ -1,8 +1,10 @@
 import PizzaToppings from '@src/components/pizzas/PizzaToppings';
 import InputWidget from '@src/components/widgets/InputWidget';
-import styles from './PizzaForm.module.scss';
+import { store$ } from '@src/store';
+import styles from './index.module.scss';
 
 const PizzaForm = ({ children }) => {
+  const toppings = store$.toppings.use()
   const handlePizzaNameChange = (e) => {
     console.log(e.target.value);
   }
@@ -40,7 +42,7 @@ const PizzaForm = ({ children }) => {
         </label>
 
         <div className={styles['pizza-form__list']}>
-          <PizzaToppings toppings={[]} />
+          <PizzaToppings toppings={toppings} />
         </div>
 
         <div className={styles['pizza-form__actions']}>
