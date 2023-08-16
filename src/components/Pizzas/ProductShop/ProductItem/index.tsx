@@ -6,7 +6,7 @@ const ProductItem = ({pizza}) => {
   return (
     <div className={styles['product-item']}>
       <PizzaForm pizza={pizza}>
-        <PizzaDisplay toppings={pizza.toppings} />
+        <PizzaDisplay toppings={pizza?.toppings || []} />
       </PizzaForm>
     </div>
   );
