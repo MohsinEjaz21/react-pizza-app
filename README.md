@@ -15,7 +15,3 @@ VITE_SUPABASE_ANON_KEY=
 ```
 npm run dev
 ```
-
-
-
-
