@@ -23,7 +23,7 @@ const ShellWrapper = (props) => {
         </div>
 
         <div className="app__footer">
-          <p>&copy; Pizza Inc.</p>
+          <p>&copy; Ultimate Pizza Inc.</p>
         </div>
       </div>
     </div>
