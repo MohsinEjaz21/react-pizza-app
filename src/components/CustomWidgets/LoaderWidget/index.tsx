@@ -1,13 +1,10 @@
-import { Suspense } from 'react';
-import Loader from './Loader';
+import styles from './index.module.scss';
 
-export const Loading = ({ isLoading, children }) => {
+function LoaderWidget({active}) {
+  if (!active) return null;
   return (
-    <>
-      <Loader active={isLoading} />
-      <Suspense fallback={<Loader active={isLoading} />}>
-        {children}
-      </Suspense>
-    </>
+    <div className={styles.loader} />
   )
 }
+
+export default LoaderWidget
