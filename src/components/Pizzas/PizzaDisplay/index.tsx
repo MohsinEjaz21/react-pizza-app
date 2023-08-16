@@ -1,4 +1,4 @@
-import { DropAnimation } from '@src/components/Pizzas/PizzaDisplay/drop.animation';
+import { DropAnimation } from '@src/components/pizzas/PizzaDisplay/drop.animation';
 import styles from './index.module.scss';
 
 const PizzaDisplay = ({ toppings =[] }) => {
