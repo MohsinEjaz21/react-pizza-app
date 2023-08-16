@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
 
-const PizzaItem = ({ pizza }) => {
+export const PizzaItem = ({ pizza }) => {
   return (
     <div className={styles['pizza-item']}>
       <Link to={`/products/${pizza.id}`}>
@@ -16,5 +16,3 @@ const PizzaItem = ({ pizza }) => {
     </div>
   );
 };
-
-export default PizzaItem;
