@@ -9,10 +9,11 @@ export function PizzaGuard({ children }) {
   if (isLoading) { return <Loader active={true} /> }
   if (error) { throw Error('Something went wrong [Get Pizzas]') }
   if (data) { store$.pizzas.set(data || []) }
-  <>
-    {children}
-  </>
-
+  return (
+    <>
+      {children}
+    </>
+  )
 }
 
 export default PizzaGuard

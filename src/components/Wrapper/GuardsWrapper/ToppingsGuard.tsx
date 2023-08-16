@@ -9,9 +9,11 @@ function ToppingsGuard({ children }) {
   if (isLoading) { return <Loader active={true} /> }
   if (error) { throw Error('Something went wrong [Get Toppings]') }
   if (data) { store$.toppings.set(data || []) }
+  return(
   <>
     {children}
   </>
+  )
 }
 
 export default ToppingsGuard
