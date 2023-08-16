@@ -1,28 +1,28 @@
 import { Pizza } from '@src/models';
-import { axios } from '@src/utils/axios';
+import { supabase } from '@src/supabaseClient';
 
-function removePizza(payload: Pizza): Promise<Pizza> {
-  return axios
-    .POST<Pizza>({ url: `/pizzas/${payload.id}` })
-    .then((response) => response?.data)
+async function removePizza(payload: Pizza): Promise<Pizza> {
+  const { data: pizza, error } = await supabase.from('pizzas').delete().eq('id', payload.id).single();
+  if (error) throw error;
+  return pizza;
 }
 
-function updatePizza(payload: Pizza): Promise<Pizza> {
-  return axios
-    .PUT<Pizza>({ url: `/pizzas/${payload.id}`, body: payload })
-    .then((response) => response?.data)
+async function updatePizza(payload: Pizza): Promise<Pizza> {
+  const { data: pizza, error } = await supabase.from('pizzas').update(payload).eq('id', payload.id).single();
+  if (error) throw error;
+  return pizza;
 }
 
-function createPizza(payload: Pizza): Promise<Pizza> {
-  return axios
-    .POST<Pizza>({ url: "/pizzas", body: payload })
-    .then((response) => response?.data)
+async function createPizza(payload: Pizza): Promise<Pizza> {
+  const { data: pizza, error } = await supabase.from('pizzas').insert(payload).single();
+  if (error) throw error;
+  return pizza;
 }
 
-function getPizzas(): Promise<Pizza[]> {
-  return axios
-    .GET<Pizza[]>({ url: "/pizzas" })
-    .then((response) => response?.data)
+async function getPizzas(): Promise<Pizza[]> {
+  const { data: toppings, error } = await supabase.from('pizzas').select('*')
+  if (error) throw error;
+  return toppings;
 }
 
 export const PizzaService = {

@@ -30,5 +30,6 @@ todo.md
 *.zip
 deployment/helm-x
 temp/
-*.env
+.env.local
 db_script.sh
+

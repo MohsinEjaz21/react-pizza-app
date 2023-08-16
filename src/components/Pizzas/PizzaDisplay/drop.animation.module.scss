@@ -1,0 +1,23 @@
+.drop-enter {
+  transform: translateY(-200px);
+  opacity: 0;
+}
+
+.drop-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 2000ms cubic-bezier(1.000, 0.000, 0.000, 1.000),
+              opacity 2000ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+}
+
+.drop-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.drop-exit-active {
+  transform: translateY(-200px);
+  opacity: 0;
+  transition: transform 2000ms cubic-bezier(1.000, 0.000, 0.000, 1.000),
+              opacity 2000ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+}

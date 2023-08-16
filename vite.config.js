@@ -55,10 +55,10 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       https: false,
-      port: 3000,
+      port: 8080,
       strictPort: true,
       hmr: {
-        clientPort: 3000,
+        clientPort: 8080,
         protocol: 'ws',
       }
     },
