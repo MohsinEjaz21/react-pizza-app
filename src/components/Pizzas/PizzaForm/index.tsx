@@ -40,15 +40,15 @@ const PizzaForm = ({ children, pizza }) => {
 
         <div className={styles['pizza-form__actions']}>
           {!pizza?.id ? (
-            <button type="button" className={`${styles['btn']} ${styles['btn__ok']}`} onClick={() => createPizza()}>
+            <button type="button" className={`btn btn__ok`} onClick={() => createPizza()}>
               Create Pizza
             </button>
           ) : (
             <>
-              <button type="button" className={`${styles['btn']} ${styles['btn__ok']}`} onClick={() => updatePizza()}>
+              <button type="button" className={`btn btn__ok`} onClick={() => updatePizza()}>
                 Save changes
               </button>
-              <button type="button" className={`${styles['btn']} ${styles['btn__warning']}`} onClick={() => removePizza()}>
+              <button type="button" className={`btn btn__warning`} onClick={() => removePizza()}>
                 Delete Pizza
               </button>
             </>
