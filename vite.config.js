@@ -2,7 +2,6 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { chunkSplitPlugin } from 'vite-plugin-chunk-split';
 import Pages from 'vite-plugin-pages';
-import { VitePWA } from 'vite-plugin-pwa';
 import svgr from 'vite-plugin-svgr';
 const path = require('path');
 
@@ -15,22 +14,6 @@ export default defineConfig(({ mode }) => {
       react(),
       Pages(),
       svgr(),
-      VitePWA({
-        registerType: 'autoUpdate',
-        workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
-          clientsClaim: true,
-          skipWaiting: true,
-          cleanupOutdatedCaches: true,
-          runtimeCaching: [
-            {
-              urlPattern: /\/_ui\//,
-              handler: 'NetworkFirst',
-            },
-          ],
-        },
-        includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
-      }),
       chunkSplitPlugin(),
     ],
     build: {
