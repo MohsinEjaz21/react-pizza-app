@@ -5,7 +5,6 @@ import { store$ } from '@src/store';
 import styles from './index.module.scss';
 
 const PizzaForm = ({ children, pizza }) => {
-  const toppings = store$.toppings.use()
   const pizzaForm$ = store$.pizzaForm;
   const pizzaName = pizzaForm$.name.use();
   const { createPizza, removePizza, updatePizza } = usePizza();
@@ -35,7 +34,7 @@ const PizzaForm = ({ children, pizza }) => {
         </label>
 
         <div className={styles['pizza-form__list']}>
-          <PizzaToppings toppings={toppings} />
+          <PizzaToppings  />
         </div>
 
         <div className={styles['pizza-form__actions']}>

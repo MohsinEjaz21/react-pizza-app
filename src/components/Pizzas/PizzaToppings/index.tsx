@@ -1,11 +1,20 @@
+import { store$ } from '@src/store';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
-const PizzaToppings = ({ toppings }) => {
+const PizzaToppings = () => {
+  const pizzaForm$ = store$.pizzaForm;
+  const toppings = store$.toppings.use();
 
   const existsInToppings = (topping) => {
+    return pizzaForm$.toppings.get().find(t => t.id == topping.id)
   }
   const selectTopping = (topping) => {
+    if (existsInToppings(topping)) {
+      pizzaForm$.toppings.set(prev => prev.filter(t => t.id != topping.id))
+    } else {
+      pizzaForm$.toppings.set(prev => [...prev, topping])
+    }
   }
 
   return (
