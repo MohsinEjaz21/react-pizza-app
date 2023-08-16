@@ -7,7 +7,7 @@ const Products = ({ pizzas }) => {
   return (
     <div className={styles.products}>
       <div className={styles['products__new']}>
-        <Link to="./new" className={classNames(styles['btn'], styles['btn__ok'])}>
+        <Link to="/products/new" className={classNames(styles['btn'], styles['btn__ok'])}>
           New Pizza
         </Link>
       </div>

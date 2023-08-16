@@ -9,7 +9,7 @@ const PizzaItem = ({ pizza }) => {
       <Link to={`/products/${pizza.id}`}>
         <PizzaDisplay toppings={pizza?.toppings} />
         <h4>{pizza.name}</h4>
-        <button type="button" className={classNames(styles['btn'], styles['btn__ok'])}>
+        <button type="button" className={classNames('btn btn__ok')}>
           View Pizza
         </button>
       </Link>
