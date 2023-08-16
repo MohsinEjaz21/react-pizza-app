@@ -22,6 +22,7 @@ export const usePizza = () => {
   const updatePizza = () => {
     PizzaService.updatePizza(pizzaForm$.get()).finally(() => {
       refetchPizzas()
+      navigateToPizzas()
     })
   }
   const removePizza = () => {
