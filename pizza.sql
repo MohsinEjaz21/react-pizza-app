@@ -1,31 +1,27 @@
+-- Drop existing schema and all tables if they exist
+DROP SCHEMA IF EXISTS pizza CASCADE;
 
-CREATE SCHEMA IF NOT EXISTS  pizza;
+-- Create the pizza schema
+CREATE SCHEMA IF NOT EXISTS pizza;
 
--- Drop existing tables if they exist
+CREATE TABLE pizza.pizzas (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    toppings JSONB NOT NULL
+);
 
-DROP TABLE IF EXISTS pizza_toppings;
-DROP TABLE IF EXISTS pizzas;
-DROP TABLE IF EXISTS toppings;
-
--- Create the toppings table
 CREATE TABLE toppings (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL
 );
 
--- Create the pizzas table
-CREATE TABLE pizzas (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
-);
+-- Insert data into the pizzas table with JSONB toppings
+INSERT INTO pizza.pizzas (name, toppings)
+VALUES
+    ('Blazin'' Inferno',
+     '[{"id":1,"name": "onion"}, {"id":2,"name": "mushroom"}]'
+    );
 
-create table pizza_toppings (
-  pizza_id int references pizzas,
-  topping_id int references toppings,
-  primary key (pizza_id, topping_id)
-);
-
--- Insert data into the toppings table
 INSERT INTO toppings (name)
 VALUES
     ('anchovy'),
@@ -41,17 +37,10 @@ VALUES
     ('sweetcorn'),
     ('tomato');
 
--- Insert data into the pizzas table
-INSERT INTO pizzas (name)
-VALUES
-    ('Blazin'' Inferno');
-
--- Insert data into the pizza_toppings table
-INSERT INTO pizza_toppings (pizza_id, topping_id)
-VALUES
-    (1, 10), -- Blazin' Inferno with pepperoni
-    (1, 9);  -- Blazin' Inferno with pepper
-
+-- Grants to roles can be added here if needed
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA pizza TO postgres, authenticated, service_role, dashboard_user, anon;
 GRANT USAGE ON SCHEMA pizza TO postgres, authenticated, service_role, dashboard_user, anon;
+GRANT USAGE, SELECT ON SEQUENCE pizzas_id_seq TO postgres, authenticated, service_role, dashboard_user, anon;
+GRANT INSERT ON TABLE pizzas  TO postgres, authenticated, service_role, dashboard_user, anon;
+
 
