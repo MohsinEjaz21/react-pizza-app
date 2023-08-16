@@ -1,6 +1,6 @@
 
-import AppWrapper from '@src/components/Wrapper';
-import ShellWrapper from '@src/components/Wrapper/ShellWrapper';
+import { AppWrapper } from '@src/components/wrapper';
+import { ShellWrapper } from '@src/components/wrapper/ShellWrapper';
 import ProductItemPage from '@src/pages/ProductItemPage';
 import ProductsPage from '@src/pages/ProductsPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';

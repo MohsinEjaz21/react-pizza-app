@@ -1,4 +1,4 @@
-import PizzaDisplay from '@src/components/Pizzas/PizzaDisplay';
+import PizzaDisplay from '@src/components/pizzas/PizzaDisplay';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './index.module.scss';

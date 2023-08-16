@@ -1,7 +1,7 @@
 import { LoaderWrapper } from "@src/components/wrapper/LoaderWrapper"
 import { Guards } from "@src/gaurds"
 
-const AppWrapper = (props) => {
+export const AppWrapper = (props) => {
   return (
     <Guards>
       <LoaderWrapper>
@@ -10,5 +10,3 @@ const AppWrapper = (props) => {
     </Guards>
   )
 }
-
-export default AppWrapper

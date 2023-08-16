@@ -1,4 +1,4 @@
-import ProductItem from "@src/components/Pizzas/ProductShop/ProductItem";
+import ProductItem from "@src/components/pizzas/ProductShop/ProductItem";
 import { store$ } from "@src/store";
 import { useEffect } from "react";
 import { useParams } from "react-router";
