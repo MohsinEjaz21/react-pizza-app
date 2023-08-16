@@ -1,7 +1,7 @@
 import { useDidMountEffect } from '@src/hook/useDidMountEffect';
-import { globalStore$ } from '@src/store';
+import { store$ } from '@src/store';
 import { useEffect, useState } from 'react';
-const validations$ = globalStore$.validation;
+const validations$ = store$.validation;
 
 const useValidation = (key, value, validations) => {
   const [isValid, setIsValid] = useState(true);

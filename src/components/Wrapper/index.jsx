@@ -1,9 +1,12 @@
+import { GuardsWrapper } from "@src/components/Wrapper/GuardsWrapper"
 import { LocationWrapper } from "./LocationWrapper"
 
 const AppWrapper = (props) => {
   return (
     <LocationWrapper>
-      {props.children}
+      <GuardsWrapper>
+        {props.children}
+      </GuardsWrapper>
     </LocationWrapper>
   )
 }

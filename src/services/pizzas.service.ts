@@ -20,7 +20,13 @@ async function createPizza(payload: Pizza): Promise<Pizza> {
 }
 
 async function getPizzas(): Promise<Pizza[]> {
-  const { data: toppings, error } = await supabase.from('pizzas').select('*')
+  const { data: pizzas, error } = await supabase.from('pizzas').select('*')
+  if (error) throw error;
+  return pizzas;
+}
+
+async function getToppings(): Promise<Pizza[]> {
+  const { data: toppings, error } = await supabase.from('toppings').select('*')
   if (error) throw error;
   return toppings;
 }
@@ -30,4 +36,5 @@ export const PizzaService = {
   updatePizza,
   createPizza,
   getPizzas,
+  getToppings
 };
