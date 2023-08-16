@@ -1,4 +1,4 @@
-import AppWrapper from '@src/components/Wrapper';
+import AppWrapper from '@src/components/wrapper';
 import HomePage from '@src/pages/HomePage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 

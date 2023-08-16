@@ -1,7 +1,7 @@
 import PizzaGuard from './PizzaGaurd';
 import ToppingsGuard from './ToppingsGuard';
 
-export function GuardsWrapper({ children }) {
+export function Guards({ children }) {
   return (
     <PizzaGuard>
       <ToppingsGuard>

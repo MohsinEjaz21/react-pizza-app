@@ -1,5 +1,5 @@
-import InputWidget from '@src/components/CustomWidgets/InputWidget';
-import PizzaToppings from '@src/components/Pizzas/PizzaToppings';
+import PizzaToppings from '@src/components/pizzas/PizzaToppings';
+import InputWidget from '@src/components/widgets/InputWidget';
 import styles from './PizzaForm.module.scss';
 
 const PizzaForm = ({ children }) => {

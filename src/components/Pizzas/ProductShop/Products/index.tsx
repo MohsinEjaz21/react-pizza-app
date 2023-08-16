@@ -1,4 +1,4 @@
-import PizzaItem from '@src/components/Pizzas/PizzaItem';
+import PizzaItem from '@src/components/pizzas/PizzaItem';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
