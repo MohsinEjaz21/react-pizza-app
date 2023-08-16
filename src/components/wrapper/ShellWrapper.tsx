@@ -13,11 +13,6 @@ const ShellWrapper = (props) => {
 
       <div className="app__content">
         <div className="app__nav">
-          {showBackBtn && (
-            <Link to="products" id="app__nav__goBack" className="active">
-               Go BACK
-            </Link>
-          )}
           <Link to="products" className="active">
             Pizzas
           </Link>

@@ -7,7 +7,7 @@ import styles from './index.module.scss';
 const PizzaForm = ({ children, pizza }) => {
   const pizzaForm$ = store$.pizzaForm;
   const pizzaName = pizzaForm$.name.use();
-  const { createPizza, removePizza, updatePizza } = usePizza();
+  const { createPizza, removePizza, updatePizza, cancelAddUpdatePizza } = usePizza();
 
   const handlePizzaNameInput = (e) => {
     pizzaForm$.name.set(e.target.value);
@@ -34,24 +34,34 @@ const PizzaForm = ({ children, pizza }) => {
         </label>
 
         <div className={styles['pizza-form__list']}>
-          <PizzaToppings  />
+          <PizzaToppings />
         </div>
 
         <div className={styles['pizza-form__actions']}>
           {!pizza?.id ? (
-            <button type="button" className={`btn btn__ok`} onClick={() => createPizza()}>
-              Create Pizza
-            </button>
+            <>
+              <button type="button" className={`btn btn__ok`} onClick={() => createPizza()}>
+                Create Pizza
+              </button>
+              &nbsp; &nbsp;
+              <button type="button" className={`btn btn__cancel`} onClick={() => cancelAddUpdatePizza()}>
+                Cancel
+              </button>
+            </>
           ) : (
             <>
               <button type="button" className={`btn btn__ok`} onClick={() => updatePizza()}>
                 Save changes
+              </button> &nbsp; &nbsp;
+              <button type="button" className={`btn btn__cancel`} onClick={() => cancelAddUpdatePizza()}>
+                Cancel
               </button>
               <button type="button" className={`btn btn__warning`} onClick={() => removePizza()}>
                 Delete Pizza
               </button>
             </>
           )}
+
         </div>
       </form>
     </div>

@@ -1,15 +1,16 @@
 import PizzaItem from '@src/components/pizzas/PizzaItem';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { usePizza } from '@src/hook/usePizza';
 import styles from './index.module.scss';
 
 const Products = ({ pizzas }) => {
+  const { onClickAddNewPizza } = usePizza()
+
   return (
     <div className={styles.products}>
       <div className={styles['products__new']}>
-        <Link to="/products/new" className={classNames(styles['btn'], styles['btn__ok'])}>
+        <button onClick={onClickAddNewPizza} className={'btn btn__ok'}>
           New Pizza
-        </Link>
+        </button>
       </div>
 
       <div className={styles['products__list']}>

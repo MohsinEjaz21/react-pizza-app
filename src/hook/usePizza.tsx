@@ -10,16 +10,45 @@ export const usePizza = () => {
   const navigateToPizzas = () => {
     navigate(`/products`)
   }
-  const refetchPizzas = () => {
-    store$.pizzas.set(PizzaService.getPizzas())
+  const navigateToAddPizza = () => {
+    navigate(`/products/new`)
   }
+
+  const refetchPizzas = () => {
+    store$.isLoading.pizzas.set(true)
+    PizzaService.getPizzas().then((data) => {
+      store$.pizzas.set(data)
+    }).finally(() => {
+      store$.isLoading.pizzas.set(false)
+    })
+  }
+
+  const validatePizzaForm = () => {
+    if (!pizzaForm$.get().name?.trim()) {
+      window.alert("Please enter a name")
+      return false
+    }
+    if (pizzaForm$.toppings.get()?.length === 0) {
+      window.alert("Please select at least one topping")
+      return false
+    }
+    return true
+  }
+
+  const onClickAddNewPizza = () => {
+    resetPizzaForm()
+    navigateToAddPizza()
+  }
+
   const createPizza = () => {
+    if (!validatePizzaForm()) return
     PizzaService.createPizza(pizzaForm$.get()).finally(() => {
       refetchPizzas()
       navigateToPizzas()
     })
   }
   const updatePizza = () => {
+    if (!validatePizzaForm()) return
     PizzaService.updatePizza(pizzaForm$.get()).finally(() => {
       refetchPizzas()
       navigateToPizzas()
@@ -31,6 +60,10 @@ export const usePizza = () => {
       navigateToPizzas()
     })
   }
+  const cancelAddUpdatePizza = () => {
+    navigateToPizzas()
+  }
+
   const resetPizzaForm = () => {
     pizzaForm$.set(structuredClone(GlobalSlice.pizzaForm))
   }
@@ -39,6 +72,8 @@ export const usePizza = () => {
     createPizza,
     updatePizza,
     removePizza,
-    resetPizzaForm
+    resetPizzaForm,
+    cancelAddUpdatePizza,
+    onClickAddNewPizza
   }
 }

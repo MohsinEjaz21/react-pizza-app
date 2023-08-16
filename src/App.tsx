@@ -7,16 +7,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-        <ShellWrapper>
-      <AppWrapper>
+      <ShellWrapper>
+        <AppWrapper>
           <Routes>
             <Route path="/" element={<ProductsPage />} />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/products/new" element={<ProductItemPage />} />
             <Route path="/products/:id" element={<ProductItemPage />} />
           </Routes>
-      </AppWrapper>
-        </ShellWrapper>
+        </AppWrapper>
+      </ShellWrapper>
     </BrowserRouter>
   );
 }

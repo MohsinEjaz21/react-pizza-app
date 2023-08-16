@@ -75,3 +75,10 @@ h4 {
 .btn__warning:hover {
   background: #880c14;
 }
+.btn__cancel {
+  background: #333;
+  color: #fff;
+}
+.btn__cancel:hover {
+  background: #000;
+}

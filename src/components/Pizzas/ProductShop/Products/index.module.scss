@@ -14,8 +14,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 24px;
 
-    pizza-item {
+    .pizza-item {
       background: #fff;
       flex: 0 0 33%;
       margin: 0 0 55px;
