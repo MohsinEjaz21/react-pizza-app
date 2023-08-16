@@ -1,18 +1,17 @@
 import { PizzaService } from '@src/services';
 import { store$ } from '@src/store';
+import { useEffect } from 'react';
 import useSWR from 'swr';
 
-function ToppingsGuard({ children }) {
+export function ToppingsGuard({ children }) {
   const { data, error, isLoading } = useSWR('/toppings', PizzaService.getToppings);
-  store$.isLoading.toppings.set(isLoading)
+  useEffect(() => { store$.toppings.set(data || []) }, [data])
+  useEffect(() => { store$.isLoading.toppings.set(isLoading) }, [isLoading])
 
-  if (error) { throw Error('Something went wrong [Get Toppings]') }
-  if (data) { store$.toppings.set(data || []) }
-  return(
-  <>
-    {children}
-  </>
+  if (error) { return <div>Something went wrong [Get Toppings]</div> }
+  return (
+    <>
+      {children}
+    </>
   )
 }
-
-export default ToppingsGuard

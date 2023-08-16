@@ -1,24 +1,17 @@
 import PizzaToppings from '@src/components/pizzas/PizzaToppings';
 import InputWidget from '@src/components/widgets/InputWidget';
+import { usePizza } from '@src/hook/usePizza';
 import { store$ } from '@src/store';
 import styles from './index.module.scss';
 
-const PizzaForm = ({ children }) => {
+const PizzaForm = ({ children, pizza }) => {
   const toppings = store$.toppings.use()
-  const handlePizzaNameChange = (e) => {
-    console.log(e.target.value);
-  }
-  const exists = false
-  const form = {
-    name: '',
-    toppings: []
-  }
+  const pizzaForm$ = store$.pizzaForm;
+  const pizzaName = pizzaForm$.name.use();
+  const { createPizza, removePizza, updatePizza } = usePizza();
 
-  const createPizza = (form) => {
-  }
-  const updatePizza = (form) => {
-  }
-  const removePizza = (form) => {
+  const handlePizzaNameInput = (e) => {
+    pizzaForm$.name.set(e.target.value);
   }
 
   return (
@@ -28,8 +21,8 @@ const PizzaForm = ({ children }) => {
           key="name"
           label="Pizza name"
           placeholder="e.g. Pepperoni"
-          value={'1234'}
-          onChange={handlePizzaNameChange}
+          value={pizzaName}
+          onChange={handlePizzaNameInput}
           validations={{
             required: { value: true, message: 'Pizza must have a name' }
           }}
@@ -46,16 +39,16 @@ const PizzaForm = ({ children }) => {
         </div>
 
         <div className={styles['pizza-form__actions']}>
-          {!exists ? (
-            <button type="button" className={`${styles['btn']} ${styles['btn__ok']}`} onClick={() => createPizza(form)}>
+          {!pizza?.id ? (
+            <button type="button" className={`${styles['btn']} ${styles['btn__ok']}`} onClick={() => createPizza()}>
               Create Pizza
             </button>
           ) : (
             <>
-              <button type="button" className={`${styles['btn']} ${styles['btn__ok']}`} onClick={() => updatePizza(form)}>
+              <button type="button" className={`${styles['btn']} ${styles['btn__ok']}`} onClick={() => updatePizza()}>
                 Save changes
               </button>
-              <button type="button" className={`${styles['btn']} ${styles['btn__warning']}`} onClick={() => removePizza(form)}>
+              <button type="button" className={`${styles['btn']} ${styles['btn__warning']}`} onClick={() => removePizza()}>
                 Delete Pizza
               </button>
             </>

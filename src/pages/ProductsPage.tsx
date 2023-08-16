@@ -1,7 +1,7 @@
 import Products from "@src/components/pizzas/ProductShop/Products";
 import { store$ } from "@src/store";
 
-function HomePage() {
+function ProductsPage() {
   const data = store$.pizzas.use();
 
   return (
@@ -9,4 +9,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default ProductsPage

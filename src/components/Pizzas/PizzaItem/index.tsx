@@ -7,7 +7,7 @@ const PizzaItem = ({ pizza }) => {
   return (
     <div className={styles['pizza-item']}>
       <Link to={`/products/${pizza.id}`}>
-        <PizzaDisplay pizza={pizza} />
+        <PizzaDisplay toppings={pizza?.toppings} />
         <h4>{pizza.name}</h4>
         <button type="button" className={classNames(styles['btn'], styles['btn__ok'])}>
           View Pizza

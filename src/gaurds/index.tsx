@@ -1,5 +1,5 @@
-import PizzaGuard from './PizzaGaurd';
-import ToppingsGuard from './ToppingsGuard';
+import { PizzaGuard } from './PizzaGuard';
+import { ToppingsGuard } from './ToppingsGuard';
 
 export function Guards({ children }) {
   return (

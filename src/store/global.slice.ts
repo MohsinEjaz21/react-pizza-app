@@ -13,5 +13,9 @@ export const GlobalSlice = {
   },
   pizzas: [] as Pizza[],
   toppings: [] as Topping[],
-
+  pizzaForm: {
+    id: undefined,
+    name: "",
+    toppings: [] as Topping[],
+  } as Pizza,
 }

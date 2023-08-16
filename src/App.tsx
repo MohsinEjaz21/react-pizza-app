@@ -1,6 +1,6 @@
 import AppWrapper from '@src/components/wrapper';
-import NewProductPage from '@src/pages/ProductsItemPage';
-import HomePage from '@src/pages/ProductsPage';
+import ProductItemPage from '@src/pages/ProductItemPage';
+import ProductsPage from '@src/pages/ProductsPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -8,8 +8,10 @@ function App() {
     <BrowserRouter>
       <AppWrapper>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/new" element={<NewProductPage/>} />
+          <Route path="/" element={<ProductsPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/new" element={<ProductItemPage />} />
+          <Route path="/products/:id" element={<ProductItemPage />} />
         </Routes>
       </AppWrapper>
     </BrowserRouter>
