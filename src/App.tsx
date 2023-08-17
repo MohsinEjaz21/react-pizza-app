@@ -1,5 +1,5 @@
 
-import { AppWrapper } from '@src/components/Wrapper';
+import { AppWrapper } from '@src/components/Wrapper/AppWrapper';
 import ProductItemPage from '@src/pages/ProductItemPage';
 import ProductsPage from '@src/pages/ProductsPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';

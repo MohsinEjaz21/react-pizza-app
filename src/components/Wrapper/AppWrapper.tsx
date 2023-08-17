@@ -1,4 +1,4 @@
-import { Guards } from "@src/components/Gaurds"
+import { Guards } from "@src/components/Gaurds/Guards"
 import { LoaderWrapper } from "./LoaderWrapper"
 import { ShellWrapper } from "./ShellWrapper"
 
