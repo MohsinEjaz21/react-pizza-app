@@ -45,8 +45,6 @@ export default defineConfig(({ mode }) => {
         protocol: 'ws',
       }
     },
-
-    base: './',
     publicDir: './public',
     tsconfig: './tsconfig.json'
   }
