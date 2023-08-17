@@ -1,10 +1,8 @@
 import styles from './index.module.scss';
 
-function LoaderWidget({active}) {
+export const LoaderWidget =({active})=> {
   if (!active) return null;
   return (
     <div className={styles.loader} />
   )
 }
-
-export default LoaderWidget
