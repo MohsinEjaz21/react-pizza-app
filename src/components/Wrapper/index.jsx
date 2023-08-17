@@ -1,5 +1,5 @@
-import { LoaderWrapper } from "@src/components/wrapper/LoaderWrapper"
-import { Guards } from "@src/gaurds"
+import { Guards } from "@src/components/Gaurds"
+import { LoaderWrapper } from "@src/components/Wrapper/LoaderWrapper"
 
 export const AppWrapper = (props) => {
   return (

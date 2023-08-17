@@ -1,5 +1,5 @@
-import PizzaToppings from '@src/components/pizzas/PizzaToppings';
-import InputWidget from '@src/components/widgets/InputWidget';
+import PizzaToppings from '@src/components/Pizzas/PizzaToppings';
+import InputWidget from '@src/components/Widgets/InputWidget';
 import { usePizza } from '@src/hook/usePizza';
 import { store$ } from '@src/store';
 import styles from './index.module.scss';

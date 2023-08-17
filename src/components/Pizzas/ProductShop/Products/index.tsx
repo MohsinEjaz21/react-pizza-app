@@ -1,4 +1,4 @@
-import { PizzaItem } from '@src/components/pizzas/PizzaItem';
+import { PizzaItem } from '@src/components/Pizzas/PizzaItem';
 import { usePizza } from '@src/hook/usePizza';
 import styles from './index.module.scss';
 
