@@ -43,7 +43,6 @@ const PizzaForm = ({ children, pizza }) => {
               <button type="button" className={`btn btn__ok`} onClick={() => createPizza()}>
                 Create Pizza
               </button>
-              &nbsp; &nbsp;
               <button type="button" className={`btn btn__cancel`} onClick={() => cancelAddUpdatePizza()}>
                 Cancel
               </button>
@@ -52,7 +51,7 @@ const PizzaForm = ({ children, pizza }) => {
             <>
               <button type="button" className={`btn btn__ok`} onClick={() => updatePizza()}>
                 Save changes
-              </button> &nbsp; &nbsp;
+              </button>
               <button type="button" className={`btn btn__cancel`} onClick={() => cancelAddUpdatePizza()}>
                 Cancel
               </button>
