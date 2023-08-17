@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0-alpha",
   "scripts": {
+    "local-build": "vite build && vite preview",
     "test": "vitest",
     "dev": "vite",
     "build": "vite build",
