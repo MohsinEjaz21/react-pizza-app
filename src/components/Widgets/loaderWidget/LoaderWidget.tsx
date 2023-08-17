@@ -1,6 +1,6 @@
-import styles from './index.module.scss';
+import styles from './LoaderWidget.module.scss';
 
-const LoaderWidget =({active})=> {
+function LoaderWidget({ active }) {
   if (!active) return null;
   return (
     <div className={styles.loader} />
