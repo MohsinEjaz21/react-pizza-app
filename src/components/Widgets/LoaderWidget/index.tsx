@@ -1,4 +1,4 @@
-import styles from './LoaderWidget.module.scss';
+import styles from './index.module.scss';
 
 function LoaderWidget({ active }) {
   if (!active) return null;

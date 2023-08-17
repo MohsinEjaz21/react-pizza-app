@@ -1,5 +1,5 @@
 import useValidation from '@src/hook/useValidation';
-import styles from './InputWidget.module.scss';
+import styles from './index.module.scss';
 
 const InputWidget = ({
   key,
