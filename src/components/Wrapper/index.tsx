@@ -4,12 +4,12 @@ import { ShellWrapper } from "./ShellWrapper"
 
 export const AppWrapper = (props) => {
   return (
-    <Guards>
-      <ShellWrapper>
+    <ShellWrapper>
+      <Guards>
         <LoaderWrapper>
           {props.children}
         </LoaderWrapper>
-      </ShellWrapper>
-    </Guards>
+      </Guards>
+    </ShellWrapper>
   )
 }
