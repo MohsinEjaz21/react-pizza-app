@@ -1,4 +1,4 @@
-import LoaderWidget from "@src/components/Widgets/LoaderWidget/index";
+import LoaderWidget from "@src/components/Widgets/LoaderWidget";
 import { store$ } from "@src/store";
 
 export const LoaderWrapper = (props) => {
