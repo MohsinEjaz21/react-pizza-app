@@ -1,15 +1,15 @@
-import { Guards } from "@src/components/Gaurds/Guards"
-import { LoaderWrapper } from "./LoaderWrapper"
-import { ShellWrapper } from "./ShellWrapper"
+import { Guards } from "@src/components/Guards/Guards"
+import { LoaderWrapper } from "@src/components/Wrapper/LoaderWrapper"
+import { UIShellWrapper } from "@src/components/Wrapper/UIShellWrapper"
 
 export const AppWrapper = (props) => {
   return (
-    <ShellWrapper>
+    <UIShellWrapper>
       <Guards>
         <LoaderWrapper>
           {props.children}
         </LoaderWrapper>
       </Guards>
-    </ShellWrapper>
+    </UIShellWrapper>
   )
 }

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export const ShellWrapper = (props) => {
+export const UIShellWrapper = (props) => {
   return (
     <div className="app">
       <div className="app__header">
