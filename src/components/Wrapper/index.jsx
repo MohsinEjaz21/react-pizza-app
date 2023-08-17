@@ -1,12 +1,15 @@
 import { Guards } from "@src/components/Gaurds"
-import { LoaderWrapper } from "@src/components/Wrapper/LoaderWrapper"
+import { LoaderWrapper } from "./LoaderWrapper"
+import { ShellWrapper } from "./ShellWrapper"
 
 export const AppWrapper = (props) => {
   return (
     <Guards>
-      <LoaderWrapper>
-        {props.children}
-      </LoaderWrapper>
+      <ShellWrapper>
+        <LoaderWrapper>
+          {props.children}
+        </LoaderWrapper>
+      </ShellWrapper>
     </Guards>
   )
 }
