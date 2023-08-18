@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0-alpha",
   "scripts": {
+    "local-build": "vite build && vite preview",
     "test": "vitest",
     "dev": "vite",
     "build": "vite build",
@@ -46,8 +47,7 @@
     "sass": "^1.63.4",
     "vite": "^4.2.0",
     "vite-plugin-chunk-split": "^0.4.7",
-    "vite-plugin-pages": "^0.31.0",
-    "vite-plugin-pwa": "^0.16.4"
+    "vite-plugin-pages": "^0.31.0"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": "eslint --cache --fix",

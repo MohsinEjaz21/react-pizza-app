@@ -15,7 +15,6 @@ export const usePizza = () => {
   }
 
   const refetchPizzas = () => {
-    store$.isLoading.pizzas.set(true)
     PizzaService.getPizzas().then((data) => {
       store$.pizzas.set(data)
     }).finally(() => {
@@ -42,6 +41,7 @@ export const usePizza = () => {
 
   const createPizza = () => {
     if (!validatePizzaForm()) return
+    store$.isLoading.pizzas.set(true)
     PizzaService.createPizza(pizzaForm$.get()).finally(() => {
       refetchPizzas()
       navigateToPizzas()
@@ -49,12 +49,14 @@ export const usePizza = () => {
   }
   const updatePizza = () => {
     if (!validatePizzaForm()) return
+    store$.isLoading.pizzas.set(true)
     PizzaService.updatePizza(pizzaForm$.get()).finally(() => {
       refetchPizzas()
       navigateToPizzas()
     })
   }
   const removePizza = () => {
+    store$.isLoading.pizzas.set(true)
     PizzaService.removePizza(pizzaForm$.get()).finally(() => {
       refetchPizzas()
       navigateToPizzas()

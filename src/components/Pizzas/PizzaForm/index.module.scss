@@ -14,6 +14,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 16px;
+
+    @media (max-width: 767px) {
+      align-items: normal;
+      gap: 8px;
+    }
+
     button {
       &:last-child {
         margin-left: auto;
